@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import image1 from "../images/image1.jpg"
-import image2 from "../images/image2.jpg"
+import image2 from "../images/image2.jpg";
+import { useDispatch, useSelector } from 'react-redux';
+import { initialData } from '../Store/ProductSlice';
+import mockdata from "../mockdata.json";
+import { Link } from 'react-router-dom';
+
 const Home = () => {
+    let dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(initialData(mockdata))
+    }, [])
+
     return (
-        <div className='m-10'>
-            <div className='flex justify-center items-center font-semibold text-5xl  '>
+        <div className='mt-40 mx-10'>
+            <div className='flex justify-center items-center font-semibold text-5xl bg-gray-300 w-full p-3  '>
                 125 Essential Household Items You Should Have at Home Somewhere
             </div>
             <div className='flex mt-20'>
@@ -22,8 +32,9 @@ const Home = () => {
             <div className='mx-20  '>
                 <h1 className='underline '> In This Article</h1>
 
+
                 <ul className='list-none '>
-                    <li className='py-3 hover:underline'> Tools & Supplies</li>
+                    <li className='py-3 hover:underline'><Link to="tools"> Tools & Supplies</Link></li>
 
                     <li className='py-3 hover:underline'> Kitchen Equipment</li>
                     <li className='py-3 hover:underline'> Cleaning Supplies</li>
@@ -35,9 +46,8 @@ const Home = () => {
                     <li className='py-3 hover:underline'> Outdoor Essentials</li>
 
 
-
-
                 </ul>
+
             </div>
 
             <div className=''>
@@ -48,30 +58,8 @@ const Home = () => {
                         <li>  A flathead screwdriver</li>
                         <li> A Phillips head screwdriver</li>
                         <li>        Pliers</li>
-                        <li>
-                            An electric screwdriver or power drill</li>
-                        <li>     A hammer</li>
-                        <li>     A tape measure</li>
-                        <li>  Level</li>
-                        <li>  An assortment of nails (for different sized jobs)</li>
-                        <li>A toolbox</li>
-                        <li>        A step ladder</li>
+                        <li>An electric screwdriver or power drill</li>
 
-
-
-
-
-
-
-                        Extra screws, nuts, and bolts (in case you need to quickly replace any furniture hardware that goes missing)
-
-
-                        A box cutter
-                        Duct tape
-                        Transparent tape
-                        Electrical tape
-                        Oil and water-displacing spray (such as WD-40)
-                        Extension cords
                     </ul>
                 </div>
             </div>

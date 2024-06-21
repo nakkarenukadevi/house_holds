@@ -23,7 +23,7 @@ const Header = () => {
     return (
         <>
 
-            <div className='bg-white shadow font-sans text-2xl font-bold flex justify-end  py-3'>
+            <div className='bg-white shadow font-sans text-2xl font-bold flex justify-end  p-3 fixed top-0 w-full'>
 
                 <div className='px-4'><button onClick={handleSinguppop} className='bg-white border-2 border-black px-4 py-3 active:bg-violet-700  hover:bg-black hover:text-white rounded-lg text-xl  font-bold'>Sign UP</button></div>
             </div>
